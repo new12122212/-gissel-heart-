@@ -24,8 +24,8 @@ def home():
           .floating-heart {
             position: absolute;
             width: 20px;
-            height: 18px;
-            background: rgba(255, 0, 0, 0.6);
+            height: 20px;
+            background: rgba(255, 0, 0, 0.5);
             transform: rotate(-45deg);
             animation: float 8s linear infinite;
           }
@@ -36,7 +36,7 @@ def home():
             position: absolute;
             width: 20px;
             height: 20px;
-            background: rgba(255, 0, 0, 0.6);
+            background: rgba(255, 0, 0, 0.5);
             border-radius: 50%;
           }
 
@@ -64,13 +64,13 @@ def home():
             }
           }
 
+          /* Main perfect heart */
           .heart {
             position: relative;
-            width: 200px;
-            height: 180px;
+            width: 150px;   /* base square */
+            height: 150px;
             background: red;
             transform: rotate(-45deg);
-            margin: 0 auto;
             animation: beat 1.5s infinite ease-in-out;
             z-index: 5;
           }
@@ -79,22 +79,23 @@ def home():
           .heart::after {
             content: "";
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 150px;   /* equal size to square */
+            height: 150px;
             background: red;
             border-radius: 50%;
           }
 
           .heart::before {
-            top: -100px;
+            top: -75px; /* half the height */
             left: 0;
           }
 
           .heart::after {
-            left: 100px;
+            left: 75px; /* half the width */
             top: 0;
           }
 
+          /* Name inside */
           .name {
             position: absolute;
             top: 50%;
@@ -103,14 +104,14 @@ def home():
             color: white;
             font-family: Arial, sans-serif;
             font-weight: bold;
-            font-size: 28px;
-            white-space: nowrap;
+            font-size: 26px;
             text-align: center;
             z-index: 10;
             pointer-events: none;
             animation: glow 1.5s infinite ease-in-out;
           }
 
+          /* Heart beat animation */
           @keyframes beat {
             0%, 100% {
               transform: rotate(-45deg) scale(1);
@@ -118,26 +119,15 @@ def home():
                           0 0 40px rgba(255, 0, 0, 0.4),
                           0 0 60px rgba(255, 255, 255, 0.3);
             }
-            30% {
-              transform: rotate(-45deg) scale(1.08);
-              box-shadow: 0 0 30px rgba(255, 105, 180, 0.8),
-                          0 0 60px rgba(255, 0, 0, 0.6),
-                          0 0 80px rgba(255, 255, 255, 0.5);
-            }
-            60% {
+            50% {
               transform: rotate(-45deg) scale(1.15);
               box-shadow: 0 0 40px rgba(255, 105, 180, 1),
-                          0 0 80px rgba(255, 0, 0, 0.9),
-                          0 0 100px rgba(255, 255, 255, 0.9);
-            }
-            80% {
-              transform: rotate(-45deg) scale(1.08);
-              box-shadow: 0 0 30px rgba(255, 105, 180, 0.8),
-                          0 0 60px rgba(255, 0, 0, 0.6),
-                          0 0 80px rgba(255, 255, 255, 0.5);
+                          0 0 80px rgba(255, 0, 0, 0.8),
+                          0 0 100px rgba(255, 255, 255, 0.8);
             }
           }
 
+          /* Name glow in sync */
           @keyframes glow {
             0%, 100% {
               text-shadow: 0 0 5px white, 0 0 10px hotpink, 0 0 15px red;
@@ -149,12 +139,12 @@ def home():
         </style>
       </head>
       <body>
-        <!-- floating hearts -->
-        <div class="floating-heart" style="left:10%; animation-delay: 0s;"></div>
-        <div class="floating-heart" style="left:30%; animation-delay: 2s;"></div>
-        <div class="floating-heart" style="left:50%; animation-delay: 4s;"></div>
-        <div class="floating-heart" style="left:70%; animation-delay: 1s;"></div>
-        <div class="floating-heart" style="left:90%; animation-delay: 3s;"></div>
+        <!-- floating background hearts -->
+        <div class="floating-heart" style="left:10%; animation-delay: 0s; animation-duration: 7s;"></div>
+        <div class="floating-heart" style="left:25%; animation-delay: 2s; animation-duration: 9s;"></div>
+        <div class="floating-heart" style="left:40%; animation-delay: 4s; animation-duration: 6s;"></div>
+        <div class="floating-heart" style="left:60%; animation-delay: 1s; animation-duration: 10s;"></div>
+        <div class="floating-heart" style="left:80%; animation-delay: 3s; animation-duration: 8s;"></div>
 
         <!-- main heart -->
         <div class="heart">
