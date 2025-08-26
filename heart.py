@@ -53,12 +53,14 @@ def home():
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg); /* undo heart rotation */
+            transform: translate(-50%, -50%) rotate(45deg);
             color: white;
             font-family: Arial, sans-serif;
             font-weight: bold;
             font-size: 24px;
             white-space: nowrap;
+            z-index: 10; /* Ensure text is on top */
+            pointer-events: none;
           }
 
           @keyframes beat {
